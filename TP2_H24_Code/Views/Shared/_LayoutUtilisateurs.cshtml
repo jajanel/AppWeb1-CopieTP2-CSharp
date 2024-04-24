@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TP2_H24_Code</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TP2_H24_Code.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <header class="couleur-navbar">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light couleur-navbar text-light border-bottom box-shadow mb-3">
+            <div class="container-fluid" style="margin-left: 175px !important;">
+                <a class="navbar-brand" asp-area="" asp-controller="Utilisateurs" asp-action="PageTousLesMedias"><img src="~/images/icons/logo.png" alt="logo" style=" width="290" height="61" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar navbar-expand-sm justify-content-end ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item bouton-orange bouton-nav rounded-3">
+                            <a class="nav-link" asp-area="" asp-controller="Utilisateurs" asp-action="PageTousLesMedias">Bibliothèque</a>
+                        </li>
+                        <li class="nav-item bouton-orange bouton-nav rounded-3">
+                            <a class="nav-link " asp-area="" asp-controller="Utilisateurs" asp-action="PageMesFavoris">Favoris</a>
+                        </li>
+                        <li class="nav-item dropdown bouton-orange bouton-nav rounded-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @TempData["PrenomUtilisateur"] @TempData["NomUtilisateur"] @{
+                                    TempData.Keep();
+                                }
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown rounded-3">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Se déconnecter</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+                
+
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+           
+        </main>
+        
+    </div>
+
+    <footer class="bg-body-tertiary text-center text-lg-start text-light couleur-footer">
+        <div class=" p-4 texte-light">
+            <p> Site web développé par Janelle Bédard, Marc-Olivier Geoffroy et William Nolan.</p>
+            <p> Pour le cours d'application Web 1, Hiver 2024.</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

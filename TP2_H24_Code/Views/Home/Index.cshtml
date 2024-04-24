@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 couleur-bg-login">
+            <div class="card-body p-md-4 mx-md-2 text-light">
+
+                <div class="logo-navbar-accueil">
+                    <a class="navbar-brand" href="#">
+                        <img src="~/images/icons/logo.png" alt="logo" style=" width="290" height="61" />
+                    </a>
+                    </div>
+
+                <!-- formulaire 1: se connecter-->
+                <form asp-controller="Home" asp-action="SeConnecter" method="post">
+                    <h1 class="titre-connexion text-light bg-black">Se Connecter</h1>
+                    <p class="erreur-inscription">@ViewBag.MessageErreurConnection</p>
+                    <div data-mdb-input-init class="form-outline mb-4 rounded">
+                        <input type="email" name="courriel" class="form-control champ-texte"
+                               placeholder="Courriel" required />
+
+                    </div>
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="password" name="motdepasse" class="form-control champ-texte" placeholder="Mot de passe" required />
+
+                    </div>
+
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary me-md-2 bouton-connexion">
+                        Se connecter
+                    </button>
+                </form>
+
+
+                <!-- ligne de séparation entre les deux forms-->
+
+                <h2 class="text-light titre-ou"><span>OU</span></h2>
+
+
+
+                <!-- formulaire : s'inscrire-->
+                <form asp-controller="Home" asp-action="Sinscrire" method="post">
+                    <h1 class="titre-connexion">S'inscrire</h1>
+                    <p class="erreur-inscription">@ViewBag.MessageErreur</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" name="prenom" class="form-control champ-texte" placeholder="Prénom" required value="@ViewBag.PrenomPreErreur" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" name="nom" class="form-control champ-texte" placeholder="Nom" required value="@ViewBag.NomPreErreur" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="email" name="courriel" class="form-control champ-texte" placeholder="Courriel" required value="@ViewBag.CourrielPreErreur" />
+                    </div>
+
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="password" name="motdepasse" class="form-control champ-texte" placeholder="Mot de passe" required />
+                    </div>
+
+
+
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary me-md-2 bouton-connexion">
+                        S'inscrire
+                    </button>
+
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Espace vide -->
+        <div class="col-lg-2">
+        </div>
+
+        <!-- Desciption du site -->
+        <div class="col-lg-6">
+            <div class="card-body p-md-3 mx-md-3 text-light ">
+                <h1 class="titre-principal"> ÉCOUTER DE LA MUSIQUE ET AJOUTER LES À VOTRE LISTE DE FAVORIS</h1>
+                <h1 class="titre-secondaire"> Application web développée par des étudiants du Cégep Limoilou. </h1>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

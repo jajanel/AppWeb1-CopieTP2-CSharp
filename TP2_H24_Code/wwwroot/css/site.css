@@ -1,0 +1,266 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+/* L'image de fond*/
+.bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/background/bg-accueil.jpg");
+}
+
+/* Page accueil non connecté*/
+.titre-principal {
+    font-family: "Passion One", sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    text-align: right;
+    margin-top: 18px;
+}
+
+/* Titre secondaire page d'accueil non connecté*/
+.titre-secondaire {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: right;
+    padding-left: 180px;
+    line-height: 1.5;
+}
+
+
+/* Utilisé par le "ou" entre le login et l'inscription*/
+.titre-ou {
+    font-family: "Montserrat", sans-serif;
+    margin: 2.5em 0;
+}
+
+
+
+
+/* Titres "se connecter" et "s'inscrire" */
+.titre-connexion {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 30px;
+    
+}
+
+/* Pour le logo dans la nav bar*/
+.logo-navbar {
+    height: 61px;
+    width: 272px;
+}
+
+/*Pour centrer le logo sur la section de connexion sur la page d'accueil*/
+.logo-navbar-accueil {
+    padding-bottom: 52px;
+    align-self: center;
+    text-align: center;
+}
+
+/* La couleur de tous les footer */
+.couleur-footer {
+    background-color: #121212;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+/* La couleur de fond mi-transparente de la section de connexion sur la page d'accueil*/
+.couleur-bg-login {
+    height: 100%;
+    background-color: rgba(9, 9, 9, 0.8);
+}
+
+
+/* Tout les boutons oranges soit dans la nav bar, soit pour rédiger une évaluation ou ajouter aux favoris*/
+.bouton-orange {
+    background-color: #E2AB12;
+    text-align: center;
+}
+
+/* Les boutons de la nav bar*/
+.bouton-nav {
+    width: 230px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Open Sans", sans-serif;
+    margin-right: 20px;
+}
+
+/* les bouton se connecter ou s'inscrire*/
+.bouton-connexion {
+    background-color: #3048C1;
+    color: #FFFFFF;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    height: 40px;
+}
+
+
+
+
+
+/* La maman du div tous les albums*/
+.maman {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: auto;
+    width: 90%;
+    min-height: 70vh;
+}
+
+
+
+/* Les rectangles qui contiennent les fiches de médias dans la liste de tous les médias/favoris*/
+.fiche-media {
+    width: 310px;
+    height: 400px;
+}
+
+/* Zoom léger de la fiche lorsqu'on passe la souris dessus */
+    .fiche-media:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 14px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* L'image superposée sur le rectangle de la fiche dans la liste de tous les médias/favoris*/
+.fiche-media img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+/* Alignement des textes sur la fiche médias */
+.fiche-media p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin: auto;
+    padding-left: 14px
+}
+
+
+/* Les champs de textes pour la connexion ou l'inscription*/
+.champ-texte {
+    background-color: #F6F6F6;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #03014C;
+    height: 60px;
+}
+
+/* Les titres comme "Liste de favoris" dans le haut à gauche de la page */
+.titre-page {
+    width: 600px;
+    padding: 16px 0 16px 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 0 0 20px 100px;
+}
+
+/* Pour l'image sur la fiche détaillée du média */
+.image-media {
+    border: 2px solid #121212;
+    width: 600px;
+    height: 600px;
+    margin: 20px 0 20px 90px;
+}
+
+/* Le bloc d'information de la fiche détaillée*/
+.info-fiche-detaille {
+    margin: 24px 0 20px 50px;
+}
+
+/* Les textes à droite de l'album sur la fiche détaillée (individuel) */
+.info-ind {
+    padding-bottom: 16px;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Les controle pour lancer la musique*/
+.play-img {
+    position: absolute;
+    bottom: 46px;
+    left: 390px;
+}
+
+/* Les boutons ajouter aux favoris et rédiger une évaluation*/
+.bouton-fiche-detaillee {
+    width: 300px;
+    height: 60px;
+    margin-bottom: 30px;
+    color: black;
+    border: none;
+}
+/* les liens dans les boutons*/
+.bouton-fiche-detaillee a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+
+/* Le div principal de la page d'erreur*/
+.erreur{
+    height: 75vh;
+    text-align:center;
+}
+
+/* Le titre de la page d'erreur*/
+.titre-erreur {
+    width: 600px;
+    padding: 16px 0 16px 0;
+    background: #121212;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+/* L'image de la page d'erreur*/
+.img-erreur{
+    margin: 100px 0 50px 0;
+}
+
+
+.texte-confirmation {
+    color: #dc3545;
+}
+
+.bouton-x{
+    position: relative;
+    left: 260px;
+    bottom: 22px;
+}
+
+.bouton-supprimer{
+    margin-top: 20px;
+    margin-right: 32px;
+}

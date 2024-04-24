@@ -1,0 +1,49 @@
+﻿@model TP2_H24_Code.Models.Media
+@{
+    ViewData["Title"] = "PageDetailleDuMedia";
+
+}
+
+
+
+
+<h1 class="titre-page bg-black text-light text-center rounded-3">Fiche Detaillée Du Media</h1>
+
+<div>
+    <div class="row" style="margin:0;">
+
+        <!-- La colonne de l'image-->
+        <div class="col-sm " style="  position: relative;">
+            <img src="@Model.Image" class="image-media rounded-3" />
+
+            <!-- Les controles pour lancer la musiques-->
+            <div class="play-img ">
+                <audio controls>
+                    <source src="@Model.AudioComplet" />
+                </audio>
+            </div>
+        </div>
+
+        <!-- La colonne des informations-->
+        <div class="col-sm text-light  titre-fiche-media info-fiche-detaille">
+            <div class="info-ind "><h6 artiste-fiche-media>Titre</h6> <p>  @Model.NomMedia</p></div>
+            <div class="info-ind "><h6>Album </h6> <p>  @Model.Album </p></div>
+
+            <div class="info-ind "><h6>Artiste</h6> <p> @Model.Auteur </p></div>
+            <div class="info-ind "><h6>Producteur </h6> <p>   @Model.Producteur</p></div>
+            <div class="info-ind "><h6>Date de réalisation </h6> <p> @Model.DateRealisation</p></div>
+            <div class="info-ind "><h6>Cote Moyenne </h6> <p>Sera implémenté plus tard</p></div>
+            <div class="info-ind "><h6>Durée </h6> <p> @Model.TempsMinutesSecondes()</p></div>
+        </div>
+
+        <!-- La colonne des deux boutons-->
+        <div class="col-sm text-light  text-right">
+            <button class="btn-block bouton-orange bouton-fiche-detaillee bouton-nav rounded-3">
+                <a asp-area="" asp-route="Favoris" asp-route-id="@Model.Identifiant">Ajouter aux favoris</a>
+                </button>
+            <button class="btn-block bouton-orange bouton-fiche-detaillee bouton-nav rounded-3">  <a asp-area="" asp-controller="Utilisateurs" asp-action="PageErreur"> Rédiger un avis</a></button>
+
+        </div>
+
+    </div>
+</div>

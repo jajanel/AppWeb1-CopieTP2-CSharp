@@ -1,0 +1,122 @@
+[
+  {
+    "Identifiant": 1,
+    "AdresseCourriel": "bob@cegeplimoilou.ca",
+    "MotdePasse": "abc123",
+    "Nom": "Marley",
+    "Prenom": "Bob",
+    "Role": "Admin",
+    "Favoris": null
+  },
+  {
+    "Identifiant": 2,
+    "AdresseCourriel": "ginette@cegeplimoilou.ca",
+    "MotdePasse": "abc123",
+    "Nom": "Reno",
+    "Prenom": "Ginette",
+    "Role": "Utilisateur",
+    "Favoris": [
+      {
+        "Identifiant": 8,
+        "NomMedia": "La Dee Da",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 0,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "2017-09-15",
+        "DureeSecondes": 242,
+        "Auteur": "Foo Fighters",
+        "Producteur": "Greg Kurstin",
+        "AudioExtrait": "ext_La_Dee_Da",
+        "AudioComplet": "full_La_Dee_Da",
+        "Image": "img_Concrete_and_Gold",
+        "Album": "Concrete and Gold"
+      },
+      {
+        "Identifiant": 5,
+        "NomMedia": "Eye of the Beholder",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 1,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "1988-08-25",
+        "DureeSecondes": 390,
+        "Auteur": "Metallica",
+        "Producteur": "Flemming Rasmussen",
+        "AudioExtrait": "ext_Eye_of_the_Beholder",
+        "AudioComplet": "full_Eye_of_the_Beholder",
+        "Image": "img_And_Justice_For_All",
+        "Album": "...And Justice for All"
+      },
+      {
+        "Identifiant": 1,
+        "NomMedia": "One",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 1,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "1988-09-07",
+        "DureeSecondes": 446,
+        "Auteur": "Metallica",
+        "Producteur": "Flemming Rasmussen",
+        "AudioExtrait": "ext_One",
+        "AudioComplet": "full_One",
+        "Image": "img_And_Justice_For_All",
+        "Album": "...And Justice for All"
+      }
+    ]
+  },
+  {
+    "Identifiant": 3,
+    "AdresseCourriel": "Joe@cegeplimoilou.ca",
+    "MotdePasse": "abc123",
+    "Nom": "Joe",
+    "Prenom": "Jojo",
+    "Role": "Utilisateur",
+    "Favoris": [
+      {
+        "Identifiant": 3,
+        "NomMedia": "Harvester of Sorrow",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 1,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "1988-09-07",
+        "DureeSecondes": 345,
+        "Auteur": "Metallica",
+        "Producteur": "Flemming Rasmussen",
+        "AudioExtrait": "ext_Harvester_of_Sorrow",
+        "AudioComplet": "full_Harvester_of_Sorrow",
+        "Image": "img_And_Justice_For_All",
+        "Album": "...And Justice for All"
+      },
+      {
+        "Identifiant": 6,
+        "NomMedia": "Run",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 0,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "2017-06-01",
+        "DureeSecondes": 324,
+        "Auteur": "Foo Fighters",
+        "Producteur": "Greg Kurstin",
+        "AudioExtrait": "ext_Run",
+        "AudioComplet": "full_Run",
+        "Image": "img_Concrete_and_Gold",
+        "Album": "Concrete and Gold"
+      },
+      {
+        "Identifiant": 10,
+        "NomMedia": "Sunday Rain",
+        "EvaluationCote": 0,
+        "GenreDeMedia": 0,
+        "EvaluationUtilisateur": [],
+        "DateRealisation": "2017-09-15",
+        "DureeSecondes": 372,
+        "Auteur": "Foo Fighters",
+        "Producteur": "Greg Kurstin",
+        "AudioExtrait": "ext_Sunday_Rain",
+        "AudioComplet": "full_Sunday_Rain",
+        "Image": "img_Concrete_and_Gold",
+        "Album": "Concrete and Gold"
+      }
+    ]
+  }
+
+]

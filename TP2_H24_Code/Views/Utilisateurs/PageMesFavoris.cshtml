@@ -1,0 +1,69 @@
+﻿<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/TP2_H24_Code.styles.css" asp-append-version="true" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+
+@model TP2_H24_Code.Models.Utilisateur
+
+@{
+    ViewData["Title"] = "PageMesFavoris";
+}
+
+<h1 class="titre-page bg-black text-light text-center rounded-3">Mes Favoris</h1>
+<script src="/js/FavorisDelete.js"></script>
+
+<div class="d-flex justify-content-md-center flex-wrap maman rounded-3">
+            @foreach (Media media in Model.Favoris)
+            {
+        <div class="col-lg-3 m-3 fiche-media p-2 bg-dark rounded-3 ">
+            <div class="figure">
+                <a href="/Utilisateurs/PageDetailleDuMedia?id=@media.Identifiant">
+                    <img src="@media.Image" height="250" width="250" class="figure-img img-fluid rounded" />
+                    </a>
+
+                <p class="figure-caption text-light ">
+                            Titre: @media.NomMedia
+                        <p />
+                <p class="figure-caption text-light ">
+                            Album: @media.Album
+                        </p>
+                <p class="figure-caption text-light ">
+                            Auteur: @media.Auteur
+                        </p>
+
+                        <button type="button" class="btn btn-danger bouton-x" id="deleteFavoris" data-id=@media.Identifiant onclick="afficherFavorisConfirmation(this.dataset.id)">X</button>
+                        
+                    </div>
+                </div>
+            }
+        </div>
+   
+    <form asp-controller="Utilisateurs" asp-action="SupprimerFavoris" method="post">
+        <nav id="confirmationFavorisDelete" class="navbar fixed-bottom navbar-dark bg-dark" style="display:none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p id="nomConfirmation" class="texte-confirmation">
+                            <!-- Modifié dans le js-->
+                        </p>
+                        <input name="id" class="form-control" id="inputid" type="hidden" />
+                    </div>
+                    <div class="col-lg-2" >
+                        <button id="boutonEnvoie" type="submit" class="btn btn-danger">Confirmer</button>
+                    </div>
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-1" >
+                        <button type="button" class="btn btn-secondary" onclick="cacherFavorisConfirmation()">Annuler</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </form>
+</div>

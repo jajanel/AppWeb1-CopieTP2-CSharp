@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "Index";
+
+}
+
+
+
+<div class="align-content-center">
+    <h1 class="titre-page bg-black text-light text-center rounded-3">Liste des utilisateurs</h1>
+    <p>@ViewBag.MessageConfirmation</p>
+</div>
+
+<div >
+    <!-- Titres des colonnes -->
+    
+
+    <!-- Ligne user et admin -->
+    <div class="row justify-content-around maman rounded-3">
+       
+
+        <!--Colonne des utilisateurs -->
+        <div class="col-lg-5 text-light">
+            <h2 class="titre-connexion"> Liste des Utilisateurs</h2>
+
+            @{
+                foreach (Utilisateur utilisateur in Model)
+                {
+                    if (utilisateur.Role == EnumRole.Utilisateur)
+                    {
+                        <div class="row my-2 bg-secondary border rounded" >
+                            <div class="col-lg-9">
+                                <p class="d-inline">
+                                    Nom:
+                                </p>
+                                <p id="prenomUtilisateur" class="d-inline">
+                                    @utilisateur.Prenom
+                                </p>
+                                <p id="nomUtilisateur" class="d-inline">
+                                    @utilisateur.Nom
+                                </p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-danger bouton-supprimer" id="deleteUser" data-prenom=@utilisateur.Prenom data-nom=@utilisateur.Nom data-courriel=@utilisateur.AdresseCourriel onclick="afficherConfirmation(this.dataset.prenom, this.dataset.nom, this.dataset.courriel)">X</button>
+                            </div>
+                            <div class="col-lg-9">
+                                <p id="email" class="d-inline">
+                                    Courriel: @utilisateur.AdresseCourriel
+                                </p>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            <!-- Continuer le template users ainsi -->
+        </div>
+
+        <!--Colonne des administrateurs -->
+        <div class="col-lg-5 text-light">
+            <h2 class="titre-connexion"> Liste des Administrateurs </h2>
+
+            @{
+                foreach (Utilisateur utilisateur in Model)
+                {
+                    if (utilisateur.Role == EnumRole.Admin)
+                    {
+                        <div class="row my-2 bg-secondary border rounded">
+                            <div class="col-lg-9">
+                                <p class="d-inline"> Nom:</p>
+
+                                <p id="prenomUtilisateur" class="d-inline">
+                                    @utilisateur.Prenom
+                                </p>
+                                <p id="nomUtilisateur" class="d-inline">
+                                    @utilisateur.Nom
+                                </p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-danger bouton-supprimer" id="deleteUser" data-prenom=@utilisateur.Prenom data-nom=@utilisateur.Nom data-courriel=@utilisateur.AdresseCourriel onclick="afficherConfirmation(this.dataset.prenom, this.dataset.nom, this.dataset.courriel)">X</button>
+                            </div>
+                            <div class="col-lg-9">
+                                <p id="email" class="d-inline">
+                                    Courriel: @utilisateur.AdresseCourriel
+                                </p>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+
+    <!-- Barre de confirmation de la suppression-->
+    <form asp-controller="Administrateurs" asp-action="SuppressionUtilisateur" method="post">
+        <nav id="confirmationDelete" class="navbar fixed-bottom navbar-dark bg-dark" style="display:none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p id="nomConfirmation" style="color:red;">
+                            <!-- Modifié dans le js-->
+                        </p>
+                        <input name="courriel" class="form-control" id="inputCourriel" type="hidden" />
+                    </div>
+                    <div class="col-lg-2" style="text-align:center;">
+                        <button id="boutonEnvoie" type="submit" class="btn btn-danger">Confirmer</button>
+                    </div>
+                    <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-1" style="text-align:center;">
+                        <button type="button" class="btn btn-secondary" onclick="cacherConfirmation()">Annuler</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </form>
+</div>
+<script src="/js/AdministrateurDelete.js"></script>
+
+
+
